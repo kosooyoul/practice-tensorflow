@@ -14,7 +14,8 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^4.2.0"
+    "@tensorflow/tfjs": "^4.2.0",
+    "jpeg-js": "^0.4.4"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",

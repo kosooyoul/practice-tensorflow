@@ -26,14 +26,14 @@ async function main() {
 
   // 딥러닝 학습
   const sequences = [
-    { input: 'chips', target: 'snack' },
-    { input: 'candy', target: 'snack' },
-    { input: 'berry', target: 'fruit' },
-    { input: 'apple', target: 'fruit' },
-    { input: 'caida', target: 'drink' },
-    { input: 'milks', target: 'drink' },
-    { input: 'rices', target: 'foods' },
-    { input: 'ramen', target: 'foods' },
+    { input: 'chips', target: '0' },
+    { input: 'candy', target: '0' },
+    { input: 'berry', target: '1' },
+    { input: 'apple', target: '0' },
+    { input: 'caida', target: '0' },
+    { input: 'milks', target: '0' },
+    { input: 'rices', target: '1' },
+    { input: 'ramen', target: '1' },
   ];
 
   const x = tf.tensor2d(
