@@ -77,3 +77,25 @@ try {
 } catch (e) {
   console.log('! Error', e.message);
 }
+
+console.log('+ TensorFlow Memory', tf.memory());
+
+const t4 = t2.square().log().neg();
+console.log('- Tensor_4 Array', t4.arraySync());
+console.log('+ TensorFlow Memory', tf.memory());
+
+const t5 = tf.tidy(() => {
+  // 중간 연산의 결과는 로컬 변수로, 현재 스코프를 빠져나가면 삭제됨
+  // 최종 연산의 결과는 리턴되므로 삭제되지 않음
+  const result = t2.square().log().neg();
+
+  console.log('+ TensorFlow Memory In Tidying', tf.memory());
+
+  return result;
+});
+console.log('- Tidyed Tensor_5 Array', t5.arraySync());
+console.log('+ TensorFlow Memory', tf.memory());
+
+const negative_t3 = t3.neg();
+console.log('- Negative Tensor_3 Array', negative_t3.arraySync());
+console.log('+ TensorFlow Memory', tf.memory());
